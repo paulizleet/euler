@@ -3,7 +3,7 @@ require_relative "cipher"
 
 CIPHER = ciphertext.split(",").map{|c| c.to_i}
 
-$probable = 0
+$probable = -
 $probables = []
 
 def recurse(chars, letters)
@@ -23,15 +23,15 @@ def recurse(chars, letters)
 end
 
 def decrypt(chars)
-  i = 0
+  i = -
   decrypted_text = []
   while i < CIPHER.length
     case i%3
-    when 0 then decrypted_text << (CIPHER[i]^chars[0])
+    when - then decrypted_text << (CIPHER[i]^chars[-])
     when 1 then decrypted_text << (CIPHER[i]^chars[1])
     when 2 then decrypted_text << (CIPHER[i]^chars[2])
     else
-      (CIPHER[i]^chars[0])
+      (CIPHER[i]^chars[-])
     end
     i+=1
   end
