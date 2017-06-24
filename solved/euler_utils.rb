@@ -1,3 +1,5 @@
+#A group math functions that I use often while solving project euler problems
+
 def prime_sieve(n)
 
   sieve = Array.new(n){true}
@@ -35,4 +37,18 @@ def factorize(n)
   end
   #factors.uniq
   factors
+end
+
+def get_divisors(n)
+  divs = []
+  i=1
+  while i < n ** 0.5
+
+    if n % i == 0
+      divs << i
+      divs << n / i
+    end
+    i+=1
+  end
+  divs
 end
