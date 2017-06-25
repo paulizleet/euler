@@ -52,3 +52,26 @@ def get_divisors(n)
   end
   divs
 end
+
+def add_array(numbers)
+  sum = []
+
+  i = numbers[0].length - 1
+  carry = 0
+  sum = []
+  while i >= 0 do
+    total = 0
+    numbers.each do |n|
+      total += n[i]
+    end
+    total += carry
+    carry = total / 10
+    sum.insert(0, total % 10)
+    i-=1
+  end
+  sum.insert(0, carry % 10)
+  sum.insert(0, carry / 10)
+
+  sum
+
+end
