@@ -62,6 +62,8 @@ def add_array(numbers)
   while i >= 0 do
     total = 0
     numbers.each do |n|
+      next if n[i].nil?
+
       total += n[i]
     end
     total += carry
