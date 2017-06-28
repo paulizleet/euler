@@ -50,7 +50,7 @@ def get_divisors(n)
     end
     i+=1
   end
-  divs
+  divs.empty? ? [1, n] : divs
 end
 
 def add_array(numbers)
