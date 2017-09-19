@@ -5,7 +5,7 @@ require_relative 'euler_utils'
 fib = [1]
 a = [0]
 b = [1]
-i=1
+i=0
 
 while fib.length < 1000 do
 
