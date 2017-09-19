@@ -55,7 +55,14 @@ def get_divisors(n)
 end
 
 def add_array(numbers)
+  #adds an array of numbers themselves separated into arrays of their digits
   sum = []
+
+  #depends on having all digit arrays be the same length
+  longest = 0
+  numbers.each {|i| i.length > longest ? longest = i.length : nil} #find longest
+  numbers.each_index {|i| numbers[i].insert(0,0) while numbers[i].length < longest} #pad all shorter numbers with zeroes
+
 
   i = numbers[0].length - 1
   carry = 0
@@ -71,8 +78,8 @@ def add_array(numbers)
     sum.insert(0, total % 10)
     i-=1
   end
-  sum.insert(0, carry % 10)
-  sum.insert(0, carry / 10)
+  sum.insert(0, carry % 10) if carry != 0
+  sum.insert(0, carry / 10) if carry / 10 != 0
 
   sum
 
