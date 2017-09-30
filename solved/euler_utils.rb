@@ -24,6 +24,16 @@ def prime_sieve(n)
   sieve
 end
 
+def is_prime?(n)
+  stop = (n ** 0.5).floor
+  i = 2
+  while i < stop do
+    return false if n % i == 0
+    i+=1
+  end
+  true
+end
+
 def factorize(n)
   i = 1
   factors = []
