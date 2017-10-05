@@ -114,3 +114,13 @@ def multiply(a, b)
   end
   product
 end
+
+def get_digits(n)
+  digs = []
+  while n > 0 do
+    digs << n % 10
+    n -= digs[-1]
+    n /= 10
+  end
+  digs
+end
