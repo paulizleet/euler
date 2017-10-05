@@ -15,17 +15,4 @@
 # ezpz
 numbers = {}
 99.times {|a| 99.times {|b| numbers.merge!({(a+2)**(b+2) => nil})}}
-
-# numbers = {}
-# a = 2
-# while a <= 100
-#   b=2
-#   while b <= 100
-#     numbers.merge!({a**b => nil})
-#     b+=1
-#   end
-#   a += 1
-# end
-
-
 p numbers.length
