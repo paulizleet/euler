@@ -124,3 +124,15 @@ def get_digits(n)
   end
   digs
 end
+
+def get_permutations(list, seq=[])
+  if list == []
+    return [seq]
+  end
+  perm_list = []
+  list.each_with_index do |e, i|
+    perm_list += get_permutations(list - [e], seq + [list[i]])
+  end
+
+  perm_list
+end
