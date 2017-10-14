@@ -1,5 +1,10 @@
 #A group math functions that I use often while solving project euler problems
 
+def factorial(n)
+  return 1 if n == 1
+  n * factorial(n-1)
+end
+
 def prime_sieve(n)
 
   sieve = Array.new(n){true}
